@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Wordle-Guesser/static/css/main.73affb96.css",
+    "main.js": "/Wordle-Guesser/static/js/main.587e5db4.js",
+    "index.html": "/Wordle-Guesser/index.html",
+    "main.73affb96.css.map": "/Wordle-Guesser/static/css/main.73affb96.css.map",
+    "main.587e5db4.js.map": "/Wordle-Guesser/static/js/main.587e5db4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73affb96.css",
+    "static/js/main.587e5db4.js"
+  ]
+}
