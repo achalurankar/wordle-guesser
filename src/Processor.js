@@ -2,7 +2,7 @@ import { dictionary } from "./data/dictionary"
 
 export default class Processor {
 
-    DELIMITER = "_"
+    DELIMITER = "."
     output = ""
     
     getCombinations(word, letters) {
