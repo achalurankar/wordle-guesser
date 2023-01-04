@@ -6,8 +6,19 @@ export default class Processor {
     output = ""
     
     getCombinations(word, letters) {
+        word = this.removeSpaces(word)
+        letters = this.removeSpaces(letters)
         this.process(word.toLowerCase(), letters.toLowerCase(), this.getRequiredLength(word))
         return this.output.substring(0, this.output.length - 1).split(" ")
+    }
+
+    removeSpaces(word) {
+        let newWord = ''
+        for(let index in word) {
+            if(word[index] !== ' ')
+                newWord += word[index]
+        }
+        return newWord
     }
 
     getRequiredLength(word) {
