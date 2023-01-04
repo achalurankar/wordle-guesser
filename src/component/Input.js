@@ -16,6 +16,10 @@ function Input(props){
         setCombinations(combos)
     }
 
+    function populateAllLetters() {
+        document.getElementById('letters').value = 'qwertyuiopasdfghjklzxcvbnm'
+    }
+
     return (
         <>
             Enter Word:&nbsp;
@@ -23,7 +27,7 @@ function Input(props){
             <br />
             <br />
             Enter Letters:&nbsp;
-            <input id="letters"/>
+            <input id="letters"/> &nbsp; <button onClick={populateAllLetters}>All</button> 
             <br />
             <br />
             <button onClick={handleSubmit}>Submit</button>
