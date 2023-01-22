@@ -4,7 +4,8 @@ export default class Processor {
 
     DELIMITER = "."
     output = ""
-    
+    useUnique = false
+
     getCombinations(word, letters) {
         word = this.removeSpaces(word)
         letters = this.removeSpaces(letters)
@@ -30,15 +31,18 @@ export default class Processor {
         return length
     }
 
-    process(word, letters, requiredLength, currWord = "") {
+    process(word, letters, requiredLength, currWord = "", usedIndices = []) {
         if(currWord.length >= requiredLength) {
             let populatedWord = this.populateWord(currWord, word);
             if(dictionary.includes(populatedWord))
                 this.output += populatedWord + " "
             return
         }
-        for(let letter of letters) {
-            this.process(word, letters, requiredLength, currWord + letter)
+        for(let i in letters) {
+            if(!usedIndices.includes(i)) {
+                let letter = letters[i]
+                this.process(word, letters, requiredLength, currWord + letter, this.useUnique ? [...usedIndices, i] : [])
+            }
         }
     }
 
